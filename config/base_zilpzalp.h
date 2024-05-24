@@ -99,6 +99,15 @@ combo_##NAME { \
             bindings = <&mo &kp>, <&kp>;
         };
 
+        shift_bp: shift_bp_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <300>;
+            bindings = <&kp>, <&kp>;
+        };
+
 	isk: intuitive_sk {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
