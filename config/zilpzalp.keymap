@@ -19,56 +19,58 @@
     keymap {
         compatible = "zmk,keymap";
 
-        aptmak {
-            label = "APT";
+        bird {
+            label = "BIRD";
 
             bindings = <
-                               &kp W          &kp F          &kp P          &kp B          &kp J          &kp L          &kp U          &kp Y
-                &hl LCTRL R    &hl LALT S     &hl LGUI T     &hl LSHFT H    &hl RALT K     &hr RALT X     &hr RSHFT N    &hr RGUI A     &hr LALT I     &hr RCTRL O
-                               &kp C          &kp G          &kp D                                        &kp M          &comsem        &dotcol
-                                                             &my_lt NUM SQT &my_lt NAV SPACE &my_lt SYM E &my_lt FUN TAB
+                        &kp C   &kp L   &kp F   &kp P   &kp K   &kp Y   &kp O   &kp U
+                &kp R   &kp S   &kp N   &kp T   &kp B   &kp J   &kp H   &kp E   &kp I   &kp A
+                        &kp W   &kp M   &kp G                   &kp D   &comsem &dotcol
+                             &mo NUM &spc_lt NAV SPACE &shift_bp LSHIFT BSPC &mo SYM
             >;
         };
         numbers {
             label = "NUM";
 
             bindings = <
-                                  &none             &none                &none              &none          &none          &kp N7         &kp N8         &kp N9
-                &hl LCTRL KP_PLUS &hl LALT KP_MINUS &hl LGUI KP_ASTERISK &hl LSHFT KP_SLASH &kp RALT       &none          &kp N4         &kp N5         &kp N6         &kp DOT
-                                  &kp N9            &kp N8               &kp N7                                           &kp N1         &kp N2         &kp N3
-                                                             &trans         &trans         &kp E          &kp N0
+                        &none                 &isk LGUI LGUI     &kp TAB     &none           &none    &kp N7   &kp N8   &kp N9
+                &none   &isk LALT LALT   &isk LCTRL LCTRL   &isk LSHIFT LSHFT      &none    &none   &kp N4   &kp N5   &kp N6   &none
+                        &none           &isk LC(LS(LALT)) LC(LS(LALT)) &none                                  &kp N1   &kp N2   &kp N3
+                                                                         &trans  &trans           &kp N0         &trans
             >;
         };
         navigation {
             label = "NAV";
 
             bindings = <
-                               &none          &none          &none           &kp C_VOL_UP   &kp LC(X)      &kp LC(INSERT) &kp LS(INSERT) &kp INSERT
-                &sk LCTRL      &sk LALT       &sk LGUI       &sk LSHFT       &kp C_VOL_DN   &kp C_MUTE     &kp LEFT       &kp DOWN       &kp UP         &kp RIGHT
-                               &kp HOME       &kp PG_DN      &kp END                                       &kp HOME       &kp PG_UP      &kp END
-                                                             &trans          &trans         &trans         &trans
+                        &none     &isk LGUI LGUI     &kp TAB     &none      &none   &kp PG_UP   &kp UP     &kp PG_DN
+                &none   &isk LALT LALT  &isk LCTRL LCTRL    &isk LSHFT LSHFT   &none      &none   &kp LEFT    &kp DOWN   &kp RIGHT   &none
+                        &none &isk LC(LS(LALT)) LC(LS(LALT)) &none                          &kp HOME    &kp INS    &kp END     
+                                                       &trans &trans         &trans &trans 
             >;
         };
         symbols {
             label = "SYM";
 
-            bindings = <
-                               &none          &none          &none            &none          &none          &none          &none          &none
-                &kp EXCL       &kp AT         &kp HASH       &kp DOLLAR       &none          &none          &kp AMPERSAND  &kp ASTERISK   &kp PERCENT    &kp CARET
-                               &kp GRAVE      &kp DQT        &kp UNDERSCORE                                 &kp BACKSLASH  &kp PIPE       &kp EQUAL
-                                                             &kp TILDE        &trans         &trans         &trans
+             bindings = <
+                        &kp EXCL   &kp DLLR    &kp GRAVE   &none      &none   &kp FSLH    &kp UNDER   &kp AT
+                &none   &kp BSLH   &kp MINUS   &kp HASH    &none      &none   &kp PRCNT   &kp EQUAL   &kp PIPE   &none
+                        &kp COLON  &kp STAR    &kp PLUS                       &kp AMPS    &kp CARET   &kp TILDE
+                                               &trans     &trans       &trans   &trans
             >;
         };
+
 #ifdef ZILPZALP_BLE_FLAG
         function {
             label = "FUN";
 
             bindings = <
-                               &bootloader    &trans         &bt BT_CLR_ALL &bt BT_PRV     &kp F12        &kp F7         &kp F8         &kp F9
-                &bootloader    &kp F12        &kp F11        &kp F10        &bt BT_NXT     &kp F11        &kp F4         &kp F5         &kp F6         &kp F10
-                               &kp F9         &kp F8         &kp F7                                       &kp F1         &kp F2         &kp F3
-                                                             &out OUT_TOG   &trans         &trans         &trans
+                               &bootloader    &trans         &bt BT_CLR_ALL &bt BT_PRV         &kp F12        &kp F7         &kp F8         &kp F9
+                &trans         &trans         &trans         &trans         &bt BT_NXT         &kp F11        &kp F4         &kp F5         &kp F6         &kp F10
+                               &out OUT_TOG   &trans         &trans                                       &kp F1         &kp F2         &kp F3
+                                                             &trans         &trans         &trans         &trans
             >;
+
 #endif
 #ifndef ZILPZALP_BLE_FLAG
         function {
@@ -76,8 +78,8 @@
 
             bindings = <
                                &bootloader    &trans         &trans         &trans         &kp F12        &kp F7         &kp F8         &kp F9
-                &bootloader    &kp F12        &kp F11        &kp F10        &trans         &kp F11        &kp F4         &kp F5         &kp F6         &kp F10
-                               &kp F9         &kp F8         &kp F7                                       &kp F1         &kp F2         &kp F3
+                &trans         &trans         &trans         &trans         &trans         &kp F11        &kp F4         &kp F5         &kp F6         &kp F10
+                               &trans         &trans         &trans                                       &kp F1         &kp F2         &kp F3
                                                              &trans         &trans         &trans         &trans
             >;
 #endif
