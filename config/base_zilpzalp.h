@@ -1,5 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/mouse.h>
 
 #define BIRD 0
 #define NUM 1
@@ -48,6 +49,8 @@ combo_##NAME { \
         COMBO(enter, &kp ENTER, 21 23, 35)
         COMBO(esc, &kp ESC, 10 18, 40)
         COMBO(tab, &kp TAB, 18 20, 35)
+	COMBO(mb1, &mkp MB1, 11 20, 25)
+	COMBO(mb2, &mkp MB2, 10 19, 25)
 /* parentheticals */
         COMBO(lbkt, &kp LBKT, 0 9, 35)
 	COMBO(lbrc, &kp LBRC, 1 10, 35)
