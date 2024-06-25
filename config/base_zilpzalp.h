@@ -114,8 +114,8 @@ combo_##NAME { \
 	isk: intuitive_sk {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
-            hold-while-undecided;
+            flavor = "balanced";
+            // hold-while-undecided;
             tapping-term-ms = <200>;
             bindings = <&kp>, <&sk>;
         };
