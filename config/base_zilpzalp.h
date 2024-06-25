@@ -11,7 +11,7 @@
 
 &sk {
     release-after-ms = <5000>;
-   // lazy;
+    lazy;
 };
 
 &caps_word {
@@ -114,8 +114,8 @@ combo_##NAME { \
 	isk: intuitive_sk {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            retro-tap;
             flavor = "hold-preferred";
+            hold-while-undecided;
             tapping-term-ms = <200>;
             bindings = <&kp>, <&sk>;
         };
